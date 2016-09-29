@@ -13,7 +13,7 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 var articles= {
-  'article-One':{
+  'article-one':{
     title : 'Article one | Paras Dumka',
     heading: 'Article One',
     date: 'Sept. 5 2015',
@@ -28,7 +28,7 @@ var articles= {
                 This is the content of my first article. This is the content of my first article.This is the content of my first article.This is the content of my first article.This is the content of my first article.This is the content of my first article.This is the content of my first article. 
             </p>`
 },
-  'article-Two': {
+  'article-two': {
           title : 'Article Two | Paras Dumka',
           heading: 'Article Two',
           date: 'Sept. 15 2015',
@@ -37,7 +37,7 @@ var articles= {
                 This is the content of my second article.  
              </p>`
   },
-  'article-Three': {
+  'article-three': {
           title : 'Article Three | Paras Dumka',
           heading: 'Article Three',
           date: 'Sept. 20 2015',
