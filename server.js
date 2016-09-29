@@ -87,7 +87,7 @@ var htmltemplate= ` <!--Trying excatly as done in module by tanmai sir-->
 return htmltemplate;
 }
 app.get('/articleName', function (req, res) {
-    var articleName= req.params.articleName;
+    var articleName = req.params.articleName;
   res.send(createtemplate(articles[articleName]));
 });
 
