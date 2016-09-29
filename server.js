@@ -12,8 +12,8 @@ app.get('/', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
-
-var articleOne={
+var articles= {
+  articleOne:{
     title : 'Article one | Paras Dumka',
     heading: 'Article One',
     date: 'Sept. 5 2015',
@@ -27,7 +27,27 @@ var articleOne={
              <p>
                 This is the content of my first article. This is the content of my first article.This is the content of my first article.This is the content of my first article.This is the content of my first article.This is the content of my first article.This is the content of my first article. 
             </p>`
+},
+  articleTwo: {
+          title : 'Article Two | Paras Dumka',
+          heading: 'Article Two',
+          date: 'Sept. 15 2015',
+          content: `  
+            <p>
+                This is the content of my second article.  
+             </p>`
+  },
+  aticleThree: {
+          title : 'Article Three | Paras Dumka',
+          heading: 'Article Three',
+          date: 'Sept. 20 2015',
+          content: `  
+            <p>
+                This is the content of my third article.  
+             </p>`
+  }
 };
+
 function createtemplate(data)
 {var title= data.title;
 var heading= data.heading;
@@ -66,16 +86,9 @@ var htmltemplate= ` <!--Trying excatly as done in module by tanmai sir-->
 `;
 return htmltemplate;
 }
-app.get('/article-one', function (req, res) {
-  res.send(createtemplate(articleOne));
-});
-
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/articleName', function (req, res) {
+    var articleName= req.params.articleName;
+  res.send(createtemplate(articles[articleName]));
 });
 
 app.get('/ui/madi.png', function (req, res) {
